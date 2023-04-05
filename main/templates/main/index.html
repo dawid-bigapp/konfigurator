@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <title>Konfigurator</title>
+    <style>
+
+
+/* .heading{
+    font-size:20px;
+    font-weight:600;
+    color:#3D5AFE;
+
+} */
+
+  .line1{
+    color:#000;
+    font-size:12px;
+
+  }
+   .line2{
+    color:#000;
+    font-size:12px;
+    
+  }
+   .line3{
+    color:#000;
+    font-size:12px;
+    
+  }
+
+  .cards{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+
+  }
+    
+
+
+.cards:hover{
+
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1);
+}
+img {
+   object-fit: cover;
+   width: 250px;
+   height: 220px;
+}
+a.carda{
+    text-decoration: none;
+    color: black;
+}
+    </style>
+</head>
+<body>
+    <div class="main text-center mt-5">
+        <h1 class="heading">Konfigurator</h1>
+        <p class="text-info">Krok 1.</p>
+        <h2>Wybierz rodzaj zabudowy</h2>
+       </div>
+                          
+       <div class="container mt-4 d-flex justify-content-center">
+          
+        <div class="row g-0">
+
+          <div class="col-md-4 border-right">
+            <a class="carda" href="{% url 'uklad' %}">
+                <div class="cards">
+                    
+                
+                    <div class="first bg-white p-4 text-center">
+                            <img src="https://kupujledy.pl/1125-large_default/oprawa-natynkowa-na-zarowke-oxyled-crosti-lacce-ro-gu10-tuba-biala-czarna.jpg" />
+
+                            <h5>Natynkowy</h5>
+                            
+                    </div>
+
+                </div>
+            </a>
+          </div>
+
+       
+
+
+
+       <div class="col-md-4 border-right">
+        <a class="carda" href="{% url 'uklad' %}">
+           <div class="cards">
+          <div class=" second bg-white p-4 text-center">
+                   <img src="https://kupujledy.pl/3640-large_default/oprawa-podtynkowa-wpuszczana-led-oxyled-grig-8w-3000k-4000k-biala-czarna.jpg"/>
+
+                   <h5>Podtynkowy</h5>
+
+                   
+               </div>
+           </div>
+        </a>
+       </div>
+
+
+
+
+       <div class="col-md-4">
+        <a class="carda" href="{% url 'uklad' %}">
+           <div class="cards">
+           <div class=" third bg-white p-4 text-center">
+                    <img src="https://kupujledy.pl/17989-large_default/lampa-wiszaca-led-argon-vermont-24w-3000k-biala-czarna-.jpg"/>
+                   <h5>Wiszący</h5>
+                   
+               </div>
+               </div>
+            </a>
+           
+
+       </div>
+
+    </div>
+          
+   </div>
+
+</body>
+</html>
