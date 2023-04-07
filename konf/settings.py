@@ -19,9 +19,9 @@ environ.Env.read_env()
 SECRET_KEY = "django-insecure-%%wg!)!1y*^6&=s=^ejy*70=8$2i3o7a*lg@p^i&-(7=44%@@j"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['konfigurator.onrender.com']
 
 
 # Application definition
