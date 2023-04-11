@@ -67,19 +67,25 @@ a.carda{
         <div class="row g-0">
 
           <div class="col-md-4 border-right">
-            <a class="carda" href="{% url 'uklad' %}">
+            
+            
                 <div class="cards">
                     
                 
                     <div class="first bg-white p-4 text-center">
-                            <img src="https://kupujledy.pl/1125-large_default/oprawa-natynkowa-na-zarowke-oxyled-crosti-lacce-ro-gu10-tuba-biala-czarna.jpg" />
+                      <form method="POST" action="{% url 'uklad' %}">
+                        {% csrf_token %}
+                        <img src="https://kupujledy.pl/1125-large_default/oprawa-natynkowa-na-zarowke-oxyled-crosti-lacce-ro-gu10-tuba-biala-czarna.jpg" />
 
-                            <h5>Natynkowy</h5>
+                        <h5>Natynkowy</h5>
+                        <input type="hidden">
+                        </form>
+
                             
                     </div>
 
                 </div>
-            </a>
+           
           </div>
 
        

@@ -1,6 +1,10 @@
 from django.shortcuts import render
 
+
+ledy = []
+
 def home(request):
+
     return render(request, './main/index.html', {})
 
 def uklad(request):
@@ -14,3 +18,5 @@ def kolor(request):
 
 def wymiary(request):
     return render(request, './main/wymiary.html', {})
+
+
