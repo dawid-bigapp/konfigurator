@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
@@ -30,6 +30,8 @@
   }
 
   .cards{
+    background-color: white;
+    border: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 20px;
     transition: all 0.2s ease;
@@ -65,6 +67,7 @@ a.btn {
         <h1 class="heading">Konfigurator</h1>
         <p class="text-info">Krok 1.</p>
         <h2>Wybierz układ</h2>
+        <p>{{ ledy.zabudowa }}</p>
        </div>
                           
        <div class="container mt-4 d-flex justify-content-center">
@@ -72,53 +75,47 @@ a.btn {
         <div class="row g-0">
 
           <div class="col-md-4 border-right">
-            <a class="carda" href="{% url 'szyna' %}">
-               <div class="cards">
-                   
+            <form method="POST" action="{% url 'szyna' %}">
+              {% csrf_token %}
+              <button class="cards" type="submit" name="btnn" value="Odcinek">
+                <img src="{% static 'odcinek.jpg' %}" />
+
+                <h5>Prosty odcinek</h5>
+              </button>
               
-               <div class="first bg-white p-4 text-center">
-                   <img src="{% static 'odcinek.jpg' %}" />
+              <input type="hidden">
+              </form>
 
-                   <h5>Prosty odcinek</h5>
-                   
-               </div>
-
-                </div>
-            </a>
           </div>
 
 
 
        <div class="col-md-4 border-right">
-        <a class="carda" href="{% url 'szyna' %}">
-           <div class="cards">
-          <div class=" second bg-white p-4 text-center">
+        <form method="POST" action="{% url 'szyna' %}">
+          {% csrf_token %}
+          <button class="cards" type="submit" name="btnn" value="Kształt L">
             <img src="{% static 'ksztalL.jpg' %}" />
 
                    <h5>Kształt L</h5>
-
-                   
-               </div>
-           </div>
-        </a>
+          </button>
+          
+          <input type="hidden">
+          </form>
        </div>
 
 
 
 
        <div class="col-md-4">
-
-           <div class="cards">
-            <a class="carda" href="{% url 'szyna' %}">
-           <div class=" third bg-white p-4 text-center">
+        <form method="POST" action="{% url 'szyna' %}">
+          {% csrf_token %}
+          <button class="cards" type="submit" name="btnn" value="Kształt U">
             <img src="{% static 'ksztaltU.jpg' %}" />
                    <h5>Kształt U</h5>
-                   
-               </div>
-               </div>
-              
-           
-            </a>
+          </button>
+          
+          <input type="hidden">
+          </form>
        </div>
 
     </div>
@@ -131,35 +128,31 @@ a.btn {
     <div class="row g-0">
 
       <div class="col-md-4 border-right">
-        <a class="carda" href="{% url 'szyna' %}">
-           <div class="cards">
-               
-          
-           <div class="first bg-white p-4 text-center">
+        <form method="POST" action="{% url 'szyna' %}">
+          {% csrf_token %}
+          <button class="cards" type="submit" name="btnn" value="Prostokąt">
             <img src="{% static 'prostokat.jpg' %}" />
 
                <h5>Prostokąt</h5>
-               
-           </div>
-
-            </div>
-        </a>
+          </button>
+          
+          <input type="hidden">
+          </form>
       </div>
 
 
 
    <div class="col-md-4 border-right">
-    <a class="carda" href="{% url 'szyna' %}">
-       <div class="cards">
-      <div class=" second bg-white p-4 text-center">
+    <form method="POST" action="{% url 'szyna' %}">
+      {% csrf_token %}
+      <button class="cards" type="submit" name="btnn" value="Podwójne L">
         <img src="{% static 'podwojneL.jpg' %}" />
 
                <h5>Podwójne L</h5>
-
-               
-           </div>
-       </div>
-    </a>
+      </button>
+      
+      <input type="hidden">
+      </form>
 
    </div>
 
@@ -167,16 +160,16 @@ a.btn {
 
 
    <div class="col-md-4">
-    <a class="carda" href="{% url 'szyna' %}">
-       <div class="cards">
-       <div class=" third bg-white p-4 text-center">
+    <form method="POST" action="{% url 'szyna' %}">
+      {% csrf_token %}
+      <button class="cards" type="submit" name="btnn" value="L sufit - ściana">
         <img src="{% static 'ksztalL.jpg' %}" />
                <h5>L sufit - ściana</h5>
-               
-           </div>
-           </div>
-          
-       </a>
+      </button>
+      
+      <input type="hidden">
+      </form>
+  
 
    </div>
     

@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <title>Konfigurator</title>
+    <style>
+
+
+.main{
+    margin-top: 15px !important;
+
+}
+
+  .line1{
+    color:#000;
+    font-size:12px;
+
+  }
+   .line2{
+    color:#000;
+    font-size:12px;
+    
+  }
+   .line3{
+    color:#000;
+    font-size:12px;
+    
+  }
+
+  .cards{
+    background-color: white;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+
+  }
+    
+
+
+.cards:hover{
+
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1);
+}
+img {
+   object-fit: cover;
+   width: 250px;
+   height: 220px;
+}
+a.carda{
+    text-decoration: none;
+    color: black;
+}
+a.btn {
+  margin: 10px !important;
+}
+    </style>
+</head>
+<body>
+    <div class="main text-center mt-5">
+        <h1 class="heading">Konfigurator</h1>
+        <p class="text-info">Krok 3.</p>
+        <h2>Wybierz oprawy:</h2>
+    </div>
+    <div class="container mt-4 d-flex justify-content-center">
+          
+        <div class="row g-0">
+            {% if ledy.zabudowa == "Natynkowy" %}
+            <div class="col-md-4 border-right">
+                    <form method="POST" action="{% url 'podsumowanie' %}">
+                        {% csrf_token %}
+                        <button class="cards" type="submit" name="btnn" value="Crosti Lpilo">
+                            <img src="https://kupujledy.pl/50433-large_default/oprawa-natynkowa-na-zarowke-oxyled-crosti-lapilo-ro-sm-gu10-tuba-biala-czarna-zlota.jpg" />
+                            <h5>Crosti Lapilo</h5>
+                        </button>
+                            
+                        <input type="hidden">
+                    </form>          
+            </div>
+
+            <div class="col-md-4 border-right">
+                <form method="POST" action="{% url 'podsumowanie' %}">
+                {% csrf_token %}
+                <button class="cards" type="submit" name="btnn" value="Sasari">
+                    <img src="https://kupujledy.pl/40205-large_default/oprawa-natynkowa-led-oxyled-sasari-sq-6w-10w-15w-biala-czarna.jpg" />
+                    <h5>Sasari</h5>
+                </button>
+                
+                <input type="hidden">
+                </form>
+            </div>
+
+            <div class="col-md-4">
+                <form method="POST" action="{% url 'podsumowanie' %}">
+                {% csrf_token %}
+                <button class="cards" type="submit" name="btnn" value="Senise">
+                    <img src="https://kupujledy.pl/4027-large_default/oprawa-natynkowa-led-oxyled-senise-ro-114w-tuba-biala-czarna.jpg" />
+                    <h5>Senise</h5>
+                </button>
+                
+                <input type="hidden">
+                </form>
+
+            </div>
+            {% elif ledy.zabudowa == "Podtynkowy" %}
+            <div class="col-md-4 border-right">
+                <form method="POST" action="{% url 'podsumowanie' %}">
+                    {% csrf_token %}
+                    <button class="cards" type="submit" name="btnn" value="Crosti Lpilo">
+                        <img src="https://kupujledy.pl/398-large_default/oprawa-podtynkowa-wpuszczana-na-zarowke-oxyled-crosti-lapilo-rc-okragla-gu10-rozne-kolory.jpg" />
+                        <h5>Crosti Lapilo</h5>
+                    </button>
+                        
+                    <input type="hidden">
+                </form>          
+            </div>
+
+            <div class="col-md-4 border-right">
+                <form method="POST" action="{% url 'podsumowanie' %}">
+                {% csrf_token %}
+                <button class="cards" type="submit" name="btnn" value="Crosti Larsi">
+                    <img src="https://kupujledy.pl/417-large_default/oprawa-podtynkowa-wpuszczana-na-zarowke-oxyled-crosti-larsi-l-gu10-okragla-biala-czarna.jpg" />
+                    <h5>Crosti Larsi</h5>
+                </button>
+                
+                <input type="hidden">
+                </form>
+            </div>
+
+            <div class="col-md-4">
+                <form method="POST" action="{% url 'podsumowanie' %}">
+                {% csrf_token %}
+                <button class="cards" type="submit" name="btnn" value="Crosti Travo">
+                    <img src="https://kupujledy.pl/3893-large_default/oprawa-podtynkowa-wpuszczana-na-zarowke-oxyled-crosti-travo-sq-g53-gu10-biala-czarna.jpg" />
+                    <h5>Crosti Travo</h5>
+                </button>
+                
+                <input type="hidden">
+                </form>
+
+            </div>
+            {% elif ledy.zabudowa == "Wiszący" %}
+            <div class="col-md-4 border-right">
+                <form method="POST" action="{% url 'podsumowanie' %}">
+                    {% csrf_token %}
+                    <button class="cards" type="submit" name="btnn" value="Vermont">
+                        <img src="https://kupujledy.pl/17989-large_default/lampa-wiszaca-led-argon-vermont-24w-3000k-biala-czarna-.jpg" />
+                        <h5>Vermont</h5>
+                    </button>
+                        
+                    <input type="hidden">
+                </form>          
+            </div>
+
+            <div class="col-md-4 border-right">
+                <form method="POST" action="{% url 'podsumowanie' %}">
+                {% csrf_token %}
+                <button class="cards" type="submit" name="btnn" value="Vero">
+                    <img src="https://kupujledy.pl/17755-large_default/lampa-wiszaca-oxyled-vero-s-m-biala.jpg" />
+                    <h5>Vero</h5>
+                </button>
+                
+                <input type="hidden">
+                </form>
+            </div>
+
+            <div class="col-md-4">
+                <form method="POST" action="{% url 'podsumowanie' %}">
+                {% csrf_token %}
+                <button class="cards" type="submit" name="btnn" value="Ramko Cruz">
+                    <img src="https://kupujledy.pl/33812-large_default/lampa-wiszaca-ramko-cruz-w-2-2xe27-prostokatne-biala.jpg" />
+                    <h5>Ramko Cruz</h5>
+                </button>
+                
+                <input type="hidden">
+                </form>
+
+            </div>
+            {% endif %}
+        </div>
+    </div>
+       
+<center>
+    <a class="btn btn-primary" href="{% url 'wymiary' %}" role="button">Powrót</a>
+   </center>
+</body>
+</html>

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -28,6 +29,8 @@
   }
 
   .cards{
+    background-color: white;
+    border: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 20px;
     transition: all 0.2s ease;
@@ -69,22 +72,24 @@ a.carda{
           <div class="col-md-4 border-right">
             
             
-                <div class="cards">
+                <!-- <div class="cards"> -->
                     
                 
-                    <div class="first bg-white p-4 text-center">
+                    <!-- <div class="first bg-white p-4 text-center"> -->
                       <form method="POST" action="{% url 'uklad' %}">
                         {% csrf_token %}
-                        <img src="https://kupujledy.pl/1125-large_default/oprawa-natynkowa-na-zarowke-oxyled-crosti-lacce-ro-gu10-tuba-biala-czarna.jpg" />
-
-                        <h5>Natynkowy</h5>
+                        <button class="cards" type="submit" name="btnn" value="Natynkowy">
+                          <img src="https://kupujledy.pl/1125-large_default/oprawa-natynkowa-na-zarowke-oxyled-crosti-lacce-ro-gu10-tuba-biala-czarna.jpg" />
+                          <h5>Natynkowy</h5>
+                        </button>
+                        
                         <input type="hidden">
                         </form>
 
                             
-                    </div>
+                    <!-- </div> -->
 
-                </div>
+                <!-- </div> -->
            
           </div>
 
@@ -93,33 +98,30 @@ a.carda{
 
 
        <div class="col-md-4 border-right">
-        <a class="carda" href="{% url 'uklad' %}">
-           <div class="cards">
-          <div class=" second bg-white p-4 text-center">
-                   <img src="https://kupujledy.pl/3640-large_default/oprawa-podtynkowa-wpuszczana-led-oxyled-grig-8w-3000k-4000k-biala-czarna.jpg"/>
-
-                   <h5>Podtynkowy</h5>
-
-                   
-               </div>
-           </div>
-        </a>
+        <form method="POST" action="{% url 'uklad' %}">
+          {% csrf_token %}
+          <button class="cards" type="submit" name="btnn" value="Podtynkowy">
+            <img src="https://kupujledy.pl/3640-large_default/oprawa-podtynkowa-wpuszczana-led-oxyled-grig-8w-3000k-4000k-biala-czarna.jpg" />
+            <h5>Podtynkowy</h5>
+          </button>
+          
+          <input type="hidden">
+          </form>
        </div>
 
 
 
 
        <div class="col-md-4">
-        <a class="carda" href="{% url 'uklad' %}">
-           <div class="cards">
-           <div class=" third bg-white p-4 text-center">
-                    <img src="https://kupujledy.pl/17989-large_default/lampa-wiszaca-led-argon-vermont-24w-3000k-biala-czarna-.jpg"/>
-                   <h5>Wiszący</h5>
-                   
-               </div>
-               </div>
-            </a>
-           
+        <form method="POST" action="{% url 'uklad' %}">
+          {% csrf_token %}
+          <button class="cards" type="submit" name="btnn" value="Wiszący">
+            <img src="https://kupujledy.pl/17989-large_default/lampa-wiszaca-led-argon-vermont-24w-3000k-biala-czarna-.jpg" />
+            <h5>Wiszący</h5>
+          </button>
+          
+          <input type="hidden">
+          </form>
 
        </div>
 

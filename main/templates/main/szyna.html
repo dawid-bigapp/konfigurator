@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -29,6 +30,8 @@
   }
 
   .cards{
+    background-color: white;
+    border: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 20px;
     transition: all 0.2s ease;
@@ -68,53 +71,48 @@ a.carda{
         <div class="row g-0">
 
           <div class="col-md-4 border-right">
-            <a class="carda" href="{% url 'kolor' %}">
-               <div class="cards">
-                   
+            <form method="POST" action="{% url 'kolor' %}">
+              {% csrf_token %}
+              <button class="cards" type="submit" name="btnn" value="Typ A">
+                <img src="https://kupujledy.pl/39722-large_default/szynoprzewod-oxyled-multiline-typ-a-natynkowy-bialy-czarny-rozne-dlugosci.jpg" />
+
+                <h5>Typ A</h5>
+              </button>
               
-               <div class="first bg-white p-4 text-center">
-                   <img src="https://kupujledy.pl/39722-large_default/szynoprzewod-oxyled-multiline-typ-a-natynkowy-bialy-czarny-rozne-dlugosci.jpg" />
-
-                   <h5>Typ A</h5>
-                   
-               </div>
-
-                </div>
-            </a>
+              <input type="hidden">
+              </form>
+          
           </div>
 
 
 
        <div class="col-md-4 border-right">
-        <a class="carda" href="{% url 'kolor' %}">
-           <div class="cards">
-          <div class=" second bg-white p-4 text-center">
-                   <img src="https://kupujledy.pl/39730-large_default/szynoprzewod-oxyled-multiline-typ-b-natynkowy-zwieszany-bialy-czarny-rozne-dlugosci.jpg"/>
+        <form method="POST" action="{% url 'kolor' %}">
+          {% csrf_token %}
+          <button class="cards" type="submit" name="btnn" value="Typ B">
+            <img src="https://kupujledy.pl/39730-large_default/szynoprzewod-oxyled-multiline-typ-b-natynkowy-zwieszany-bialy-czarny-rozne-dlugosci.jpg"/>
 
-                   <h5>Typ B</h5>
-
-                   
-               </div>
-           </div>
-        </a>
+            <h5>Typ B</h5>
+          </button>
+          
+          <input type="hidden">
+          </form>
        </div>
 
 
 
 
        <div class="col-md-4">
+        <form method="POST" action="{% url 'kolor' %}">
+          {% csrf_token %}
+          <button class="cards" type="submit" name="btnn" value="Typ C">
+            <img src="https://kupujledy.pl/39743-large_default/szynoprzewod-oxyled-multiline-typ-c-podtynkowy-bialy-czarny-rozne-dlugosci.jpg"/>
+            <h5>Typ C</h5>
+          </button>
+          
+          <input type="hidden">
+          </form>
 
-           <div class="cards">
-            <a class="carda" href="{% url 'kolor' %}">
-           <div class=" third bg-white p-4 text-center">
-                    <img src="https://kupujledy.pl/39743-large_default/szynoprzewod-oxyled-multiline-typ-c-podtynkowy-bialy-czarny-rozne-dlugosci.jpg"/>
-                   <h5>Typ C</h5>
-                   
-               </div>
-               </div>
-              
-           
-            </a>
        </div>
 
     </div>
@@ -127,35 +125,31 @@ a.carda{
     <div class="row g-0">
 
       <div class="col-md-6 border-right">
-        <a class="carda" href="{% url 'kolor' %}">
-           <div class="cards">
-               
+        <form method="POST" action="{% url 'kolor' %}">
+          {% csrf_token %}
+          <button class="cards" type="submit" name="btnn" value="Typ D">
+            <img src="https://kupujledy.pl/50240-large_default/szynoprzewod-oxyled-multiline-typ-d-podtynkowy-bialy-czarny-rozne-dlugosci.jpg" />
+
+            <h5>Typ D</h5>
+          </button>
           
-           <div class="first bg-white p-4 text-center">
-               <img src="https://kupujledy.pl/50240-large_default/szynoprzewod-oxyled-multiline-typ-d-podtynkowy-bialy-czarny-rozne-dlugosci.jpg" />
-
-               <h5>Typ D</h5>
-               
-           </div>
-
-            </div>
-        </a>
+          <input type="hidden">
+          </form>
       </div>
 
 
 
    <div class="col-md-6 border-right">
-    <a class="carda" href="{% url 'kolor' %}">
-       <div class="cards">
-      <div class=" second bg-white p-4 text-center">
-               <img src="https://kupujledy.pl/50242-large_default/szynoprzewod-oxyled-multiline-typ-e-podtynkowy-bialy-czarny-rozne-dlugosci.jpg"/>
+    <form method="POST" action="{% url 'kolor' %}">
+      {% csrf_token %}
+      <button class="cards" type="submit" name="btnn" value="Typ E">
+        <img src="https://kupujledy.pl/50242-large_default/szynoprzewod-oxyled-multiline-typ-e-podtynkowy-bialy-czarny-rozne-dlugosci.jpg"/>
 
-               <h5>Typ E</h5>
-
-               
-           </div>
-       </div>
-    </a>
+        <h5>Typ E</h5>
+      </button>
+      
+      <input type="hidden">
+      </form>
 
    </div>
 

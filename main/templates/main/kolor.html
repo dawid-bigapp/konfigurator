@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -31,6 +32,8 @@
   }
 
   .cards{
+    background-color: white;
+    border: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 20px;
     transition: all 0.2s ease;
@@ -73,35 +76,31 @@ a.btn {
         <div class="row g-0">
 
           <div class="col-md-6 border-right">
-            <a class="carda" href="{% url 'wymiary' %}">
-               <div class="cards">
-                   
+            <form method="POST" action="{% url 'wymiary' %}">
+              {% csrf_token %}
+              <button class="cards" type="submit" name="btnn" value="Biały">
+                <img src="https://kupujledy.pl/40320-large_default/oprawa-natynkowa-led-oxyled-basaro-ro-89w-wodoodporna-ip65-biala-czarna.jpg" />
+
+                <h5>Biały</h5>
+              </button>
               
-               <div class="first bg-white p-4 text-center">
-                   <img src="https://kupujledy.pl/40320-large_default/oprawa-natynkowa-led-oxyled-basaro-ro-89w-wodoodporna-ip65-biala-czarna.jpg" />
-
-                   <h5>Biały</h5>
-                   
-               </div>
-
-                </div>
-            </a>
+              <input type="hidden">
+              </form>
           </div>
 
 
 
        <div class="col-md-6 border-right">
-        <a class="carda" href="{% url 'wymiary' %}">
-           <div class="cards">
-          <div class=" second bg-white p-4 text-center">
-                   <img src="https://kupujledy.pl/40319-large_default/oprawa-natynkowa-led-oxyled-basaro-ro-89w-wodoodporna-ip65-biala-czarna.jpg"/>
+        <form method="POST" action="{% url 'wymiary' %}">
+          {% csrf_token %}
+          <button class="cards" type="submit" name="btnn" value="Czarny">
+            <img src="https://kupujledy.pl/40319-large_default/oprawa-natynkowa-led-oxyled-basaro-ro-89w-wodoodporna-ip65-biala-czarna.jpg"/>
 
-                   <h5>Czarny</h5>
-
-                   
-               </div>
-           </div>
-        </a>
+            <h5>Czarny</h5>
+          </button>
+          
+          <input type="hidden">
+          </form>
        </div>
 
 

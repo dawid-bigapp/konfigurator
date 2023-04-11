@@ -7,4 +7,6 @@ urlpatterns = [
     path('szyna', views.szyna, name='szyna'),
     path('kolor', views.kolor, name='kolor'),
     path('wymiary', views.wymiary, name='wymiary'),
+    path('oprawy', views.oprawy, name='oprawy'),
+    path('podsumowanie', views.podsumowanie, name='podsumowanie'),
 ]
