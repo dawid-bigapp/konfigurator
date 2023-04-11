@@ -13,6 +13,9 @@ ledy = {
     'c':0,
     'd':0,
     'oprawa':'',
+    'zaslepki': 0,
+    'zasilacze': 0,
+    'laczniki': 0,
 }
 
 def home(request):
@@ -59,36 +62,62 @@ def oprawy(request):
     if request.method == "POST":
         if ledy['uklad'] == "Prosty odcinek":
             form = wymiaryOdcinek(request.POST)
-            ledy['a'] == request.POST['wymiara']
+            ledy['a'] = request.POST['wymiara']
         if ledy['uklad'] == "Kształt L":
             form = wymiaryL(request.POST)
-            ledy['a'] == request.POST['wymiara']
-            ledy['b'] == request.POST['wymiarb']
+            ledy['a'] = request.POST['wymiara']
+            ledy['b'] = request.POST['wymiarb']
         if ledy['uklad'] == "Kształt U":
             form = wymiaryU(request.POST)
-            ledy['a'] == request.POST['wymiara']
-            ledy['b'] == request.POST['wymiarb']
-            ledy['c'] == request.POST['wymiarc']
+            ledy['a'] = request.POST['wymiara']
+            ledy['b'] = request.POST['wymiarb']
+            ledy['c'] = request.POST['wymiarc']
         if ledy['uklad'] == "Prostokąt":
             form = wymiaryProstokat(request.POST)
-            ledy['a'] == request.POST['wymiara']
-            ledy['b'] == request.POST['wymiarb']
-            ledy['c'] == request.POST['wymiarc']
-            ledy['d'] == request.POST['wymiard']
+            ledy['a'] = request.POST['wymiara']
+            ledy['b'] = request.POST['wymiarb']
+            ledy['c'] = request.POST['wymiarc']
+            ledy['d'] = request.POST['wymiard']
         if ledy['uklad'] == "Podwójne L":
             form = wymiaryPodwojneL(request.POST)
-            ledy['a'] == request.POST['wymiara']
-            ledy['b'] == request.POST['wymiarb']
-            ledy['c'] == request.POST['wymiarc']
-            ledy['d'] == request.POST['wymiard']
+            ledy['a'] = request.POST['wymiara']
+            ledy['b'] = request.POST['wymiarb']
+            ledy['c'] = request.POST['wymiarc']
+            ledy['d'] = request.POST['wymiard']
         if ledy['uklad'] == "L suit - ściana":
             form = wymiarySufitSciana(request.POST)
-            ledy['a'] == request.POST['wymiara']
-            ledy['b'] == request.POST['wymiarb']
+            ledy['a'] = request.POST['wymiara']
+            ledy['b'] = request.POST['wymiarb']
     return render(request, './main/oprawy.html', {'ledy':ledy})
 
 
 def podsumowanie(request):
     if request.method == "POST":
         ledy['oprawy'] = request.POST.get('btnn')
-    return render(request, './main/podsumowanie.html', {})
+        dlugoscszyn = int(ledy['a']) + int(ledy['b']) + int(ledy['c']) + int(ledy['d'])
+        ile2 = 0
+        ile1 = 0
+        while dlugoscszyn > 0:
+            if dlugoscszyn > 0 and dlugoscszyn < 2:
+                ile1 += 1
+                dlugoscszyn -= 1
+            elif dlugoscszyn > 0 and dlugoscszyn >= 2:
+                ile2 += 1
+                dlugoscszyn -= 2
+        if ledy['uklad'] == "Prosty odcinek":
+            ledy['zaslepki'] = 2
+        if ledy['uklad'] == "Kształt L":
+            ledy['zaslepki'] = 2
+            ledy['laczniki'] = 1
+        if ledy['uklad'] == "Kształt U":
+            ledy['zaslepki'] = 2
+            ledy['laczniki'] = 2
+        if ledy['uklad'] == "Prostokąt":
+            ledy['laczniki'] = 4
+        if ledy['uklad'] == "Podwójne L":
+            ledy['zaslepki'] = 4
+            ledy['laczniki'] = 2
+        if ledy['uklad'] == "L suit - ściana":
+            ledy['zaslepki'] = 2
+            ledy['laczniki'] = 1
+    return render(request, './main/podsumowanie.html', {'ledy':ledy, 'ile1':ile1, 'ile2':ile2})

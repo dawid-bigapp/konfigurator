@@ -68,10 +68,42 @@ a.btn {
             <p class="text-info">Krok 4.</p>
             <h2>Podsumowanie:</h2>
         </div>
-
-        
         <center>
-            <a class="btn btn-primary" href="{% url 'oprawy' %}" role="button">Powrót</a>
+            Aby Twoja konfiguracja mogła działać prawidłowo dodaliśmy dodatkowe komponenty.
+            <div class="card" style="width: 50%;">
+                
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Zabudowa:</strong>{{ ledy.zabudowa }}</li>
+                    <li class="list-group-item"><strong>Układ:</strong>{{ ledy.uklad }}</li>
+                    <li class="list-group-item"><strong>Szyna:</strong>{{ ledy.szyna }}</li>
+                    <li class="list-group-item"><strong>Kolor:</strong>{{ ledy.kolor }}</li>
+                    <li class="list-group-item"><strong>Wymiary:</strong>
+                        <ul>
+                            {% if ledy.a > 0  %}
+                            <li>A: {{ ledy.a }}</li>
+                            {% endif %}
+                            {% if ledy.b > 0  %}
+                            <li>B: {{ ledy.b }}</li>
+                            {% endif %}
+                            {% if ledy.b > 0  %}
+                            <li>C: {{ ledy.C }}</li>
+                            {% endif %}
+                            {% if ledy.b > 0  %}
+                            <li>D: {{ ledy.d }}</li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    <li class="list-group-item"><strong>Oprawa:</strong>{{ ledy.oprawa }}</li>
+                    <li class="list-group-item"><strong>Dodatkowo:</strong>
+                        <ul>
+                            <li>Zaślepka: {{ ledy.a }}x</li>
+                            <li>Ilość szyn: {% if ile2 > 0 %}{{ ile2 }}x szyna 2mb, {% endif %} {% if ile1 > 0 %}{{ ile }}{% endif %}</li>
+                            <li>Łączniki: {{ ledy.C }}x łącznik "L"</li>
+                            <li>Zasilacze: {{ ledy.d }}</li>
+                        </ul>
+                    </li>
+                  </ul>
+            </div> 
         </center>
     </body>
 </html>
