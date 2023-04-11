@@ -93,17 +93,49 @@ def oprawy(request):
 
 def podsumowanie(request):
     if request.method == "POST":
-        ledy['oprawy'] = request.POST.get('btnn')
-        dlugoscszyn = int(ledy['a']) + int(ledy['b']) + int(ledy['c']) + int(ledy['d'])
-        ile2 = 0
-        ile1 = 0
-        while dlugoscszyn > 0:
-            if dlugoscszyn > 0 and dlugoscszyn < 2:
-                ile1 += 1
-                dlugoscszyn -= 1
-            elif dlugoscszyn > 0 and dlugoscszyn >= 2:
-                ile2 += 1
-                dlugoscszyn -= 2
+        ledy['oprawa'] = request.POST.get('btnn')
+        dlugoscszynya = int(ledy['a'])
+        dlugoscszynyb = int(ledy['b'])
+        dlugoscszynyc = int(ledy['c'])
+        dlugoscszynyd = int(ledy['d'])
+        ile2a = 0
+        ile1a = 0
+        ile2b = 0
+        ile1b = 0
+        ile2c = 0
+        ile1c = 0
+        ile2d = 0
+        ile1d = 0
+        while dlugoscszynya > 0:
+            if dlugoscszynya > 0 and dlugoscszynya <= 1:
+                ile1a += 1
+                dlugoscszynya -= 1
+            elif dlugoscszynya > 0 and dlugoscszynya > 1:
+                ile2a += 1
+                dlugoscszynya -= 2
+        while dlugoscszynyb > 0:
+            if dlugoscszynyb > 0 and dlugoscszynyb <= 1:
+                ile1b += 1
+                dlugoscszynyb -= 1
+            elif dlugoscszynyb > 0 and dlugoscszynyb > 1:
+                ile2b += 1
+                dlugoscszynyb -= 2
+        while dlugoscszynyc > 0:
+            if dlugoscszynyc > 0 and dlugoscszynyc <= 1:
+                ile1c += 1
+                dlugoscszynyc -= 1
+            elif dlugoscszynyc > 0 and dlugoscszynyc > 1:
+                ile2c += 1
+                dlugoscszynyc -= 2
+        while dlugoscszynyd > 0:
+            if dlugoscszynyd > 0 and dlugoscszynyd <= 1:
+                ile1d += 1
+                dlugoscszynyd -= 1
+            elif dlugoscszynyd > 0 and dlugoscszynyd > 1:
+                ile2d += 1
+                dlugoscszynyd -= 2                
+        ile2 = ile2a + ile2b + ile2c + ile2d
+        ile1 = ile1a + ile1b + ile1c + ile1d
         if ledy['uklad'] == "Prosty odcinek":
             ledy['zaslepki'] = 2
         if ledy['uklad'] == "Kształt L":
