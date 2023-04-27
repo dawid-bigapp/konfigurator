@@ -42,7 +42,18 @@
   }
     
 
-
+  .back{
+    transform: skewx(-15deg);
+    background-color: #ef7800;
+    border: 0;
+    border-radius: 0;
+  }
+  .back:hover{
+    transform: skewx(-15deg);
+    background-color: #e66201;
+    border: 0;
+    border-radius: 0;
+  }
 .cards:hover{
 
     box-shadow: 5px 6px 6px 2px #e9ecef;
@@ -117,7 +128,7 @@ a.btn {
     </div>     
        
 <center>
-    <a class="btn btn-primary" href="{% url 'szyna' %}" role="button">Powrót</a>
+    <a class="btn btn-primary back" href="{% url 'szyna' %}" role="button">Powrót</a>
    </center>
 </body>
 </html>

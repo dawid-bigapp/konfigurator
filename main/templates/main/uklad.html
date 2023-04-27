@@ -7,6 +7,18 @@
     <title>Konfigurator</title>
     <style>
 
+.back{
+    transform: skewx(-15deg);
+    background-color: #ef7800;
+    border: 0;
+    border-radius: 0;
+  }
+  .back:hover{
+    transform: skewx(-15deg);
+    background-color: #e66201;
+    border: 0;
+    border-radius: 0;
+  }
 
 .main{
     margin-top: 15px !important;
@@ -67,7 +79,6 @@ a.btn {
         <h1 class="heading">Konfigurator</h1>
         <p class="text-info">Krok 1.</p>
         <h2>Wybierz układ</h2>
-        <p>{{ ledy.zabudowa }}</p>
        </div>
                           
        <div class="container mt-4 d-flex justify-content-center">
@@ -78,7 +89,7 @@ a.btn {
             <form method="POST" action="{% url 'szyna' %}">
               {% csrf_token %}
               <button class="cards" type="submit" name="btnn" value="Odcinek">
-                <img src="{% static 'odcinek.jpg' %}" />
+                <img src="{% static 'main/odcinek.jpg' %}" />
 
                 <h5>Prosty odcinek</h5>
               </button>
@@ -121,11 +132,41 @@ a.btn {
     </div>
           
    </div>
-   </div>
+
                       
    <div class="container mt-4 d-flex justify-content-center">
-      
     <div class="row g-0">
+    {% if ledy.zabudowa == "Wiszący" %}
+    <div class="col-md-6 border-right">
+      <form method="POST" action="{% url 'szyna' %}">
+        {% csrf_token %}
+        <button class="cards" type="submit" name="btnn" value="Prostokąt">
+          <img src="{% static 'prostokat.jpg' %}" />
+
+             <h5>Prostokąt</h5>
+        </button>
+        
+        <input type="hidden">
+        </form>
+    </div>
+
+
+
+ <div class="col-md-6 border-right">
+  <form method="POST" action="{% url 'szyna' %}">
+    {% csrf_token %}
+    <button class="cards" type="submit" name="btnn" value="Podwójne L">
+      <img src="{% static 'podwojneL.jpg' %}" />
+
+             <h5>Podwójne L</h5>
+    </button>
+    
+    <input type="hidden">
+  </form>
+
+ </div>
+    {% else %}
+    
 
       <div class="col-md-4 border-right">
         <form method="POST" action="{% url 'szyna' %}">
@@ -152,10 +193,9 @@ a.btn {
       </button>
       
       <input type="hidden">
-      </form>
-
+    </form>
    </div>
-
+   
 
 
 
@@ -169,15 +209,14 @@ a.btn {
       
       <input type="hidden">
       </form>
-  
-
    </div>
-    
+   
+
+{% endif %} 
 </div>
-      
 </div>
 <center>
-    <a class="btn btn-primary" href="{% url 'home' %}" role="button">Powrót</a>
+    <a class="btn btn-primary back" href="{% url 'home' %}" role="button">Powrót</a>
    </center>
 </body>
 </html>

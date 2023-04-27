@@ -24,17 +24,17 @@ def home(request):
 def uklad(request):
     if request.method == "POST":
         ledy['zabudowa'] = request.POST.get('btnn')
-    return render(request, './main/uklad.html', {})
+    return render(request, './main/uklad.html', {'ledy':ledy})
 
 def szyna(request):
     if request.method == "POST":
         ledy['uklad'] = request.POST.get('btnn')
-    return render(request, './main/szyna.html', {})
+    return render(request, './main/szyna.html', {'ledy':ledy})
 
 def kolor(request):
     if request.method == "POST":
         ledy['szyna'] = request.POST.get('btnn')
-    return render(request, './main/kolor.html', {})
+    return render(request, './main/kolor.html', {'ledy':ledy})
 
 def wymiary(request):
     form1 = wymiaryOdcinek()

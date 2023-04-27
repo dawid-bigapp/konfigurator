@@ -8,6 +8,18 @@
     <style>
 
 
+.back{
+    transform: skewx(-15deg);
+    background-color: #ef7800;
+    border: 0;
+    border-radius: 0;
+  }
+  .back:hover{
+    transform: skewx(-15deg);
+    background-color: #e66201;
+    border: 0;
+    border-radius: 0;
+  }
 .main{
     margin-top: 15px !important;
 
@@ -107,5 +119,8 @@ a.btn {
                   </ul>
             </div> 
         </center>
+        <center>
+            <a class="btn btn-primary back" href="{% url 'uklad' %}" role="button">Powrót</a>
+           </center>
     </body>
 </html>
