@@ -76,8 +76,6 @@ def oprawy(request):
             form = wymiaryProstokat(request.POST)
             ledy['a'] = request.POST['wymiara']
             ledy['b'] = request.POST['wymiarb']
-            ledy['c'] = request.POST['wymiarc']
-            ledy['d'] = request.POST['wymiard']
         if ledy['uklad'] == "Podwójne L":
             form = wymiaryPodwojneL(request.POST)
             ledy['a'] = request.POST['wymiara']

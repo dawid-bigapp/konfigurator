@@ -23,8 +23,6 @@ class wymiaryU(forms.Form):
 class wymiaryProstokat(forms.Form):
     wymiara = forms.CharField(label="Wymiar A:", widget=forms.Select(choices=WYMIARY))
     wymiarb = forms.CharField(label="Wymiar B:", widget=forms.Select(choices=WYMIARY))
-    wymiarc = forms.CharField(label="Wymiar C:", widget=forms.Select(choices=WYMIARY))
-    wymiard = forms.CharField(label="Wymiar D:", widget=forms.Select(choices=WYMIARY))
     
 
 class wymiaryPodwojneL(forms.Form):

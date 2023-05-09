@@ -84,33 +84,33 @@ a.btn {
         <div class="col-md-12 border-right">
           <form method="POST" action="{% url 'oprawy' %}">
             {% csrf_token %}
-            <button class="cards" type="submit" name="btnn">
+            <button class="cards" type="button" name="btnn">
               {% if ledy.uklad == "Prosty odcinek" %}
-                <img src="{% static 'odcinek.jpg' %}" />
+                <img src="{% static 'main/odcinek.jpg' %}" />
 
                 <h5>Prosty odcinek</h5>
 
               {% elif ledy.uklad == "Kształt L" %}
-                <img src="{% static 'ksztalL.jpg' %}" />
+                <img src="{% static 'main/ksztalL.jpg' %}" />
 
                 <h5>Kształt L</h5>
 
               {% elif ledy.uklad == "Kształt U" %}
-                <img src="{% static 'ksztaltU.jpg' %}" />
+                <img src="{% static 'main/ksztaltU.jpg' %}" />
                 <h5>Kształt U</h5>
 
               {% elif ledy.uklad == "Prostokąt" %}
-                <img src="{% static 'prostokat.jpg' %}" />
+                <img src="{% static 'main/prostokat.jpg' %}" />
 
                 <h5>Prostokąt</h5>
 
               {% elif ledy.uklad == "Podwójne L" %}
-                <img src="{% static 'podwojneL.jpg' %}" />
+                <img src="{% static 'main/podwojneL.jpg' %}" />
 
                 <h5>Podwójne L</h5>
 
               {% elif ledy.uklad == "L suit - ściana" %}
-                <img src="{% static 'ksztalL.jpg' %}" />
+                <img src="{% static 'main/ksztalL.jpg' %}" />
                 <h5>L sufit - ściana</h5>
                 
               {% endif %}
@@ -128,7 +128,7 @@ a.btn {
     </div>     
        
 <center>
-    <a class="btn btn-primary back" href="{% url 'szyna' %}" role="button">Powrót</a>
+    <a class="btn btn-primary back" href="{% url 'kolor' %}" role="button">Powrót</a>
    </center>
 </body>
 </html>
